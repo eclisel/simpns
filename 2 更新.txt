@@ -1,0 +1,136 @@
+root@A335CORE:/TJTP/LOG/20220103# cat Renew_02150202_20220103140127_0411b302215280_00_Y.log
+
+
+Commandbuf len=48:00 2e 28 02 15 02 02 61 d2 91 37 00 00 00 89 ee 16 00 00 00 02 00 00 04 11 b3 02 21 52 80 01 00 00 00
+0c 00 00 00 00 00 00 00 00 64 00 00 09 7b
+进站码为：0X0
+出站码为：0X0
+(Ticket/CTicket.cpp:959)重新加载卡片
+(Ticket/CTicket.cpp:3415)atq[0]=4400
+04 11 B3 02 21 52 80
+00 04 11 B3 02 21 52 80
+(Ticket/CTicket.cpp:3451)重新加载卡片成功
+(Ticket/CTicket.cpp:969)读卡并解析
+(Ticket/Ulcard/CUlCardTicket.cpp:1190)CUlCardTicket::ReadAndPraseTicketData()
+(Ticket/Ulcard/../../Ticket/Ulcard/CUlCardTicket.h:855)UL数据
+04 11 B3 2E 02 21 52 80 F1 48 00 00 00 00 00 00
+20 30 81 B6 24 EE 00 10 31 E0 10 01 00 6C 00 00
+00 00 00 C8 2C 23 6C B0 00 9F 9A 0F 32 36 CA 01
+02 63 C0 06 32 36 CA 19 0C 63 C0 01 00 00 65 B9
+(Ticket/Ulcard/CUlCardTicket.cpp:2011)验证UL卡的DS.准备做.
+(Ticket/Ulcard/CUlCardTicket.cpp:1950)DES 初始化.准备做.
+apdu:Init For Descrypt(通用DES初始化)80 1A 26 01 08 04 11 B3 02 21 52 80 80 OUT:9000
+(Ticket/Ulcard/CUlCardTicket.cpp:1956)返回长度:2,返回字符串:0X90 00 .
+(Ticket/Ulcard/CUlCardTicket.cpp:1965)DES 初始化.成功.
+(Ticket/Ulcard/CUlCardTicket.cpp:1987)DES 计算.准备做.
+apdu: Descrypt(通用DES计算)80 FA 01 00 28 04 11 B3 2E 02 21 52 80 20 30 81 B6 24 EE 00 10 31 E0 10 01 00 6C 00 00 00 00
+00 C8 2C 23 6C B0 80 00 00 00 00 00 00 00 OUT:65B9B75A9000
+(Ticket/Ulcard/CUlCardTicket.cpp:1992)返回长度:6,返回字符串:0X65 b9 b7 5a 90 00 .
+(Ticket/Ulcard/CUlCardTicket.cpp:2001)DES 计算.成功.
+(Ticket/Ulcard/CUlCardTicket.cpp:2024)验证UL卡的DS.成功.
+(Ticket/Ulcard/CUlCardTicket.cpp:1662)UL 发行区
+        格式版本:1. 代币分类:0. 初始化日:3. ISN:33206.
+        初始化年:18. 初始化月:7.
+        编码分拣机序号:7.预留5_1:7.token类别:0.预留5_2:1.
+(Ticket/Ulcard/ULNormalTicket.cpp:175)单程票/计次票发售信息
+        线路:06.发售站点:0f.发售设备:01.退款标志:0.车票子类型:0.日期类型:0.退款标志:0.团体人数:1.
+        发售累计器:108.发售金额:200
+        发售（有效）年月日时分:22.1.3.13.37
+(Ticket/Ulcard/CUlCardTicket.cpp:1695)公共信息区
+        进站线路:6.进站站点:15.
+        token处理累计器:319.当日更新计数器:0.上次交易序号IORF:1.
+(Ticket/Ulcard/CUlCardTicket.cpp:1768)交易信息区1       交易.月:25.日:3.时:13.分:37.
+        交易.处理线路:6.处理站点:15.交易设备编号:25.节点类别:6.
+        交易.更新标记:0.更新类型:0.模式标记:0.PTF:0.CRC:1.
+(Ticket/Ulcard/CUlCardTicket.cpp:1872)关键信息区.换乘配对号=0,卡标记字段=0 数字签名:65 b9.
+(Ticket/CTicket.cpp:974)检查是否在单程票重试列表中
+(Ticket/CTicket.cpp:980)检查是否在储值票的保护列表中
+(Ticket/CTicket.cpp:995)不在保护列表中，或已确定未完成保护点
+(Ticket/CTicket.cpp:998)开始票卡恢复流程
+
+(Ticket/CTicket.cpp:1021)开始票卡分析
+(Ticket/CTicket.cpp:2403)付费区分析
+(EOD/CEodManager.cpp:353)TicketType = 0 TicketFamily=0
+(Ticket/CTicket.cpp:2464)计算票卡是否在有效时间范围内
+(Ticket/Ulcard/ULOnewayTicket.cpp:645)CULOnewayTicket::IsInEffectiveTime计算票卡是否在有效时间范围内
+当前时间: 2022-01-03 14:01:27
+(Ticket/Ulcard/ULOnewayTicket.cpp:633)计算票卡有效时间范围
+票卡有效开始时间（售票时间）： 2022-01-03 13:37:00
+票卡终止日期: 2022-01-03***考虑24小时连续运营，当前运营日小于等于购票日即可
+当前运营日: 2022-01-03
+(EOD/CEodManager.cpp:976)检查是否在地铁普通票黑名单中
+(Ticket/Ulcard/CUlCardTicket.cpp:1095)GetEntryAndExitDeviceIDandTime
+(Ticket/Ulcard/ULOnewayTicket.cpp:633)计算票卡有效时间范围
+当前这笔是入站记录或BOM的更新记录
+(Ticket/Ulcard/../../Ticket/Ulcard/CUlCardTicket.h:651)m_ulTradeMonth=25 m_ulTradeDay=3 m_ulTradeHour=13 m_ulTradeMin=37
+20 22 01 03 13 37 00
+进站站点060f0000进站时间 2022-01-03 13:37:00
+出站站点00000000出站时间 0000-00-00 00:00:00
+(Ticket/CTicket.cpp:2491)入站站点60f 入站时间 2022-01-03 13:37:00 出站站点0 出站时间 0000-00-00 00:00:00
+s_TransactionInfoStr[IORF].m_ulTradeNodeType=6,m_ulTradeUpdateType=0.
+单程票UL卡.处于已入站状态.
+(Ticket/CTicket.cpp:2504)票卡状态1 票卡为已入站状态
+(EOD/CEodManager.cpp:509)entryStation=60f exitStation=215,m_EodDataFare.fareTierList.fareTierList_len=36100
+(EOD/CEodManager.cpp:515)找到进出站 获取到费率组
+(EOD/CEodManager.cpp:517)*FareTier 1
+当前时间 2022-01-03 14:01:27  进站或更新时间 2022-01-03 13:37:00  diff=1467
+(Ticket/CTicket.cpp:2569)费率等级=1 目前滞留时间 =1467  最大允许时间 =14400
+(EOD/CEodManager.cpp:509)entryStation=60f exitStation=215,m_EodDataFare.fareTierList.fareTierList_len=36100
+(EOD/CEodManager.cpp:515)找到进出站 获取到费率组
+(EOD/CEodManager.cpp:517)*FareTier 1
+(EOD/CEodManager.cpp:656)获取FareTier成功：TicketTypeID 0 FareTier=1
+(EOD/CEodManager.cpp:659)获取GetFareGroupID成功：TicketTypeID 0 FareGroupID=0
+(EOD/CEodManager.cpp:661)计算费率:GetFareValue Tstatus=0,FareValue=300
+(Ticket/CTicket.cpp:2674)m_PurseValue   c8 FareAmount 12c
+(Ticket/CTicket.cpp:2675)折扣率  100 ； 费率 300
+(Ticket/CTicket.cpp:2677)折扣率X费率 300
+(Ticket/CTicket.cpp:2914)付费区分析：票卡状态：12 付费区分析,票卡超程（单程票），更新类型:4 超程更新  建议卡扣更新金额:-
+1 建议现金更新金额: 100
+(Ticket/CTicket.cpp:1031)票卡付费区分析,状态=付费区分析,票卡超程（单程票）
+(Ticket/CTicket.cpp:1064)开始更新流程
+s_TransactionInfoStr[IORF].m_ulTradeNodeType=6,m_ulTradeUpdateType=0.
+单程票UL卡.处于已入站状态.
+(Ticket/Ulcard/CUlCardTicket.cpp:670)最新的交易信息区：
+(Ticket/Ulcard/CUlCardTicket.cpp:1768)交易信息区0       交易.月:25.日:3.时:14.分:1.
+        交易.处理线路:2.处理站点:21.交易设备编号:2.节点类别:2.
+        交易.更新标记:1.更新类型:4.模式标记:0.PTF:0.CRC:6.
+(Ticket/Ulcard/CUlCardTicket.cpp:1950)DES 初始化.准备做.
+apdu:Init For Descrypt(通用DES初始化)80 1A 26 01 08 04 11 B3 02 21 52 80 80 OUT:9000
+(Ticket/Ulcard/CUlCardTicket.cpp:1956)返回长度:2,返回字符串:0X90 00 .
+(Ticket/Ulcard/CUlCardTicket.cpp:1965)DES 初始化.成功.
+(Ticket/Ulcard/CUlCardTicket.cpp:1987)DES 计算.准备做.
+apdu: Descrypt(通用DES计算)80 FA 01 00 28 04 11 B3 2E 02 21 52 80 20 30 81 B6 24 EE 00 10 31 E0 10 01 00 6C 00 20 00 00
+01 2C 2C 23 6C B0 80 00 00 00 00 00 00 00 OUT:B128799F9000
+(Ticket/Ulcard/CUlCardTicket.cpp:1992)返回长度:6,返回字符串:0Xb1 28 79 9f 90 00 .
+(Ticket/Ulcard/CUlCardTicket.cpp:2001)DES 计算.成功.
+(Ticket/Ulcard/ULOnewayTicket.cpp:626)计算票卡有效时间范围
+PSAM卡号:网络字节序:47 40 16 08
+PSAM卡号:本地字节序:08 16 40 47
+(Ticket/Ulcard/CUlCardTicket.cpp:2050)计算交易TAC.准备做.
+(Ticket/Ulcard/CUlCardTicket.cpp:2076)DES 初始化.准备做.
+apdu:Init For Descrypt(通用DES初始化)80 1A 44 01 10 30 00 80 00 00 00 00 00 4E 30 81 B6 80 00 00 00 OUT:9000
+(Ticket/Ulcard/CUlCardTicket.cpp:2081)返回长度:2,返回字符串:0X90 00 .
+(Ticket/Ulcard/CUlCardTicket.cpp:2090)DES 初始化.成功.
+(Ticket/Ulcard/CUlCardTicket.cpp:2152)计算交易TAC.准备做.
+apdu: Descrypt(通用DES计算)80 FA 01 00 20 05 4E 30 81 B6 61 D2 91 37 00 C8 00 64 00 02 15 02 02 00 00 09 7B 00 00 01 40
+80 00 00 00 00 00 OUT:231B98699000
+(Ticket/Ulcard/CUlCardTicket.cpp:2157)返回长度:6,返回字符串:0X23 1b 98 69 90 00 .
+(Ticket/Ulcard/CUlCardTicket.cpp:2166)计算交易TAC.成功.
+(Ticket/Ulcard/CUlCardTicket.cpp:1327)UL_Read成功.
+ 04 11 B3 2E 02 21 52 80 F1 48 00 00 00 00 00 00
+ 20 30 81 B6 24 EE 00 10 31 E0 10 01 00 6C 00 00
+ 00 00 00 C8 2C 23 6C B0 00 9F 9A 0F 32 36 CA 01
+ 02 63 C0 06 32 36 CA 19 0C 63 C0 01 00 00 65 B9
+(Ticket/Ulcard/CUlCardTicket.cpp:1327)UL_Read成功.
+ 04 11 B3 2E 02 21 52 80 F1 48 00 00 00 00 00 00
+ 20 30 81 B6 24 EE 00 10 31 E0 10 01 00 6C 00 00
+ 00 00 01 2C 2C 23 6C B0 00 A0 18 0F 32 37 03 02
+ 84 25 40 0B 32 36 CA 19 0C 63 C0 01 00 00 B1 28
+(Ticket/Ulcard/CUlCardTicket.cpp:1385)写UL卡成功确认.
+(UDFile/UDFile.cpp:10)storeSLEUDMSG,TransactionType=5,seqno=-1
+(UDFile/UDFile.cpp:76)存入交易数据,g_UdDataTop=118,g_UdDataBottom=117
+Answerbuf len=109:28 00 6a 00 01 01 00 4e 30 81 b6 00 00 00 c8 00 00 01 2c 1f 66 00 00 00 05 00 00 00 00 4e 30 81 b6 00
+04 11 b3 02 21 52 80 00 00 00 00 47 40 16 08 00 00 01 40 00 00 00 c8 00 00 1f 66 00 00 00 04 00 89 ee 16 00 00 00 02 00
+00 00 64 00 00 00 00 00 00 09 7b 61 d2 91 37 47 40 16 08 02 15 02 02 00 00 00 05 00 00 00 00 23 1b 98 69
+cmdbuf[0]=28 exec t=171 s_pCurrentTicket=13a4f8
+root@A335CORE:/TJTP/LOG/20220103#
